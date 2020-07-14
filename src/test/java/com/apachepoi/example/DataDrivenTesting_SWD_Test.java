@@ -43,6 +43,7 @@ public class DataDrivenTesting_SWD_Test {
 		
 		//Aquí poner la dirección del archivo excel de su computadora 
 		//o también pueden incluirlo como parte del proyecto, la ruta sería como la que usamos para el chromedriver.exe (ver en el método setUp arriba)
+		
 		String filepath = "src/test/resources/data/Test.xlsx";
 
 		String searchText = readFile.getCellValue(filepath, "Hoja1", 0, 0);
