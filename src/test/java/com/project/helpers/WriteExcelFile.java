@@ -51,7 +51,7 @@ public class WriteExcelFile {
 		
 		XSSFRow row = newSheet.getRow(rowNumber);
 		XSSFCell firstCell = row.getCell(cellNumber-1);		
-		System.out.println("First cell value is: "+firstCell.getStringCellValue());
+		//System.out.println("First cell value is: "+firstCell.getStringCellValue());
 		
 		XSSFCell nextCell = row.createCell(cellNumber);
 		nextCell.setCellValue(resultText);

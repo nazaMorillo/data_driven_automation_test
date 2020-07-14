@@ -13,7 +13,7 @@ import com.project.helpers.ReadExcelFile;
 import com.project.helpers.WriteExcelFile;
 import com.project.pages.SignInPage;
 
-public class SignIn_Test {
+public class SignInUser_Test {
 	private WebDriver driver;
 	public SignInPage signInPage;
 	
@@ -28,15 +28,20 @@ public class SignIn_Test {
 		
 		readFile = new ReadExcelFile();
 		writeFile = new WriteExcelFile();
-		filepath = "src/test/resources/data/Test.xlsx";
+		filepath = "src/test/resources/data/Test.xlsx";		
+//		signInPage.visit("http://newtours.demoaut.com/mercurywelcome.php");
+//		signInPage.visit("https://phptravels.com/");
 		
-		signInPage.visit("http://newtours.demoaut.com/mercurywelcome.php");
+		signInPage.visit("https://www.phptravels.net/home");
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		driver.quit();
+		//driver.quit();
 	}
+	
+//	User:user@phptravels.com
+//	Pass:demouser
 
 	@Test
 	public void UserSingIn() throws InterruptedException, IOException {
@@ -44,11 +49,10 @@ public class SignIn_Test {
 		String user = readFile.getCellValue(filepath, "Credenciales", 0, 0);
 		String pass = readFile.getCellValue(filepath, "Credenciales", 0, 1);
 		
-		signInPage.signIn(user, pass);
-		
-		Thread.sleep(4000);
+		signInPage.signIn(user, pass);		
+		Thread.sleep(6000);
 		assertTrue(signInPage.isHomePageDisplayed());
-		writeFile.writeCellValue(filepath, "Credenciales", 0, 3, "activo");
+		writeFile.writeCellValue(filepath, "Credenciales", 0, 2, "disponible");
 	}
 
 }

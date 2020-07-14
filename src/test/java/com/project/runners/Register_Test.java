@@ -33,7 +33,8 @@ public class Register_Test {
 		writeFile = new WriteExcelFile();
 		filepath = "src/test/resources/data/Test.xlsx";
 		
-		registerPage.visit("http://newtours.demoaut.com/mercurywelcome.php");
+//		registerPage.visit("http://newtours.demoaut.com/mercurywelcome.php");
+		registerPage.visit("https://phptravels.com/");
 	}
 
 	@After
