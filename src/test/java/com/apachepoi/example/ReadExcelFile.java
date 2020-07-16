@@ -12,10 +12,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ReadExcelFile {
 
 	public ReadExcelFile() {
-		// TODO Auto-generated constructor stub
+
 	}
 
-	@SuppressWarnings("resource")
 	public void readExcel( String filepath, String sheetName) throws IOException {
 		
 		File file = new File(filepath);
@@ -36,10 +35,10 @@ public class ReadExcelFile {
 				System.out.println(row.getCell(j).getStringCellValue() + "||");
 			}
 		}
+		newWorkbook.close();
 	}
 	
 	
-	@SuppressWarnings("resource")
 	public String getCellValue(String filepath, String sheetName, int rowNumber, int cellNumber) throws IOException {
 		
 		File file = new File(filepath);
@@ -53,10 +52,7 @@ public class ReadExcelFile {
 		XSSFRow row = newSheet.getRow(rowNumber);
 		
 		XSSFCell cell = row.getCell(cellNumber);
-		
-		return cell.getStringCellValue();
-
-		
-		
+		newWorkbook.close();
+		return cell.getStringCellValue();		
 	}
 }

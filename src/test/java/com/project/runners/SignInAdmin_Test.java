@@ -21,7 +21,6 @@ public class SignInAdmin_Test {
 		signAdminInPage = new SignInAdminPage(driver);
 		driver = signAdminInPage.chromeDriverConnection();
 		
-//		signInPage.visit("http://newtours.demoaut.com/mercurywelcome.php");	
 		signAdminInPage.visit("https://www.phptravels.net/admin");
 	}
 
@@ -30,11 +29,11 @@ public class SignInAdmin_Test {
 		driver.quit();
 	}
 	
-//	User:admin@phptravels.com
-//	Pass:demoadmin
+	//User:admin@phptravels.com
+	//Pass:demoadmin
 
 	@Test
-	public void UserSingIn() throws InterruptedException, IOException {
+	public void UserAdminSingIn() throws InterruptedException, IOException {
 		
 		String user = "admin@phptravels.com";
 		String pass = "demoadmin";
@@ -42,6 +41,6 @@ public class SignInAdmin_Test {
 		signAdminInPage.signIn(user, pass);		
 		Thread.sleep(6000);
 		assertTrue(signAdminInPage.isAdminPageDisplayed());	
-	}
-
+	}	
+	
 }

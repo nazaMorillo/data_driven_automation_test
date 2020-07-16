@@ -16,7 +16,6 @@ public class WriteExcelFile {
 		
 	}
 	
-	@SuppressWarnings("resource")
 	public void writeExcel(String filepath, String sheetName, String[] dataToWrite) throws IOException {
 		File file = new File(filepath);
 		FileInputStream inputStream = new FileInputStream(file);
@@ -38,11 +37,10 @@ public class WriteExcelFile {
 		FileOutputStream outputStream = new FileOutputStream(file);
 		
 		newWorkbook.write(outputStream);
-		
+		newWorkbook.close();
 		outputStream.close();
 	}
 	
-	@SuppressWarnings("resource")
 	public void writeCellValue(String filepath, String sheetName, int rowNumber, int cellNumber, String resultText) throws IOException {
 		File file = new File(filepath);
 		FileInputStream inputStream = new FileInputStream(file);
@@ -50,7 +48,7 @@ public class WriteExcelFile {
 		XSSFSheet newSheet = newWorkbook.getSheet(sheetName);
 		
 		XSSFRow row = newSheet.getRow(rowNumber);
-		XSSFCell firstCell = row.getCell(cellNumber-1);		
+		//XSSFCell firstCell = row.getCell(cellNumber-1);		
 		//System.out.println("First cell value is: "+firstCell.getStringCellValue());
 		
 		XSSFCell nextCell = row.createCell(cellNumber);
@@ -63,8 +61,8 @@ public class WriteExcelFile {
 		FileOutputStream outputStream = new FileOutputStream(file);
 		newWorkbook.write(outputStream);
 		
-		outputStream.close();
-		
+		newWorkbook.close();
+		outputStream.close();		
 	}
 
 }
