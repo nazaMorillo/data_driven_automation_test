@@ -29,7 +29,6 @@ public class SignInUser_Test {
 		readFile = new ReadExcelFile();
 		writeFile = new WriteExcelFile();
 		filepath = "src/test/resources/data/Test.xlsx";		
-//		signInPage.visit("http://newtours.demoaut.com/mercurywelcome.php");
 //		signInPage.visit("https://phptravels.com/");
 		
 		signInPage.visit("https://www.phptravels.net/home");

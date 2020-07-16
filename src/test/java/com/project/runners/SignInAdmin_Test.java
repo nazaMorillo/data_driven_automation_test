@@ -29,7 +29,7 @@ public class SignInAdmin_Test {
 		readFile = new ReadExcelFile();
 		writeFile = new WriteExcelFile();
 		filepath = "src/test/resources/data/Test.xlsx";		
-//		signInPage.visit("http://newtours.demoaut.com/mercurywelcome.php");	
+
 		signAdminInPage.visit("https://www.phptravels.net/admin");
 	}
 
