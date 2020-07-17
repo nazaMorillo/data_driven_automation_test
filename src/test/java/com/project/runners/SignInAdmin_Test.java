@@ -42,7 +42,7 @@ public class SignInAdmin_Test {
 //	Pass:demoadmin
 
 	@Test
-	public void UserSingIn() throws InterruptedException, IOException {
+	public void UserAdminSingIn() throws InterruptedException, IOException {
 		
 		String user = readFile.getCellValue(filepath, "Credenciales", 1, 0);
 		String pass = readFile.getCellValue(filepath, "Credenciales", 1, 1);
